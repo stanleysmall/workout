@@ -1,1071 +1,255 @@
 <!DOCTYPE html>
-<html>
-    <head>
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    </head>
+
+<head>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
 
 <body>
 
-    <h1>Workout</h1>
-
-    <p id="workout"></p>
-
-    <style type="text/css">
-        table.tableizer-table {
-            font-size: 12px;
-            border: 1px solid #CCC;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        .tableizer-table td {
-            padding: 4px;
-            margin: 3px;
-            border: 1px solid #CCC;
-        }
-
-        .tableizer-table th {
-            background-color: #104E8B;
-            color: #FFF;
-            font-weight: bold;
-        }
-    </style>
-
-    <h2 week=0> Week 1 </h2>
-
-    <p week=0 day=1>Squat </p>
-    <table class="tableizer-table" week=0 day=1>
-
-        <thead>
-            <tr class="tableizer-firstrow">
-                <th>%</th>
-                <th>Weight</th>
-                <th>Sets</th>
-                <th>Reps</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>40%</td>
-                <td>80</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>50%</td>
-                <td>100</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>60%</td>
-                <td>117.5</td>
-                <td>1</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>65%</td>
-                <td>127.5</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>75%</td>
-                <td>147.5</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>85%</td>
-                <td>167.5</td>
-                <td>1</td>
-                <td>5+</td>
-            </tr>
-            <tr>
-                <td>65%</td>
-                <td>127.5</td>
-                <td>5</td>
-                <td>5</td>
-            </tr>
-        </tbody>
-    </table>
-
-
-    <p week=0 day=2> Bench</p>
-    <table class="tableizer-table" week=0 day=2>
-
-        <thead>
-            <tr class="tableizer-firstrow">
-                <th>%</th>
-                <th>Weight</th>
-                <th>Sets</th>
-                <th>Reps</th>
-        <tbody>
-            <tr>
-                <td>40%</td>
-                <td>67.5</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>50%</td>
-                <td>85</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>60%</td>
-                <td>100</td>
-                <td>1</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>65%</td>
-                <td>110</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>75%</td>
-                <td>125</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>85%</td>
-                <td>142.5</td>
-                <td>1</td>
-                <td>5+</td>
-            </tr>
-            <tr>
-                <td>65%</td>
-                <td>110</td>
-                <td>5</td>
-                <td>5</td>
-            </tr>
-        </tbody>
-    </table>
-
-
-
-    <p week=0 day=3> Deadlift</p>
-    <table class="tableizer-table" week=0 day=3>
-
-        <thead>
-            <tr class="tableizer-firstrow">
-                <th>%</th>
-                <th>Weight</th>
-                <th>Sets</th>
-                <th>Reps</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>40%</td>
-                <td>105</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>50%</td>
-                <td>132.5</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>60%</td>
-                <td>160</td>
-                <td>1</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>65%</td>
-                <td>172.5</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>75%</td>
-                <td>200</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>85%</td>
-                <td>225</td>
-                <td>1</td>
-                <td>5+</td>
-            </tr>
-            <tr>
-                <td>65%</td>
-                <td>172.5</td>
-                <td>5</td>
-                <td>5</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <p week=0 day=4> Press</p>
-    <table class="tableizer-table" week=0 day=4>
-        <thead>
-            <tr class="tableizer-firstrow">
-                <th>%</th>
-                <th>Weight</th>
-                <th>Sets</th>
-                <th>Reps</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>40%</td>
-                <td>35</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>50%</td>
-                <td>45</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>60%</td>
-                <td>55</td>
-                <td>1</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>65%</td>
-                <td>57.5</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>75%</td>
-                <td>67.5</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>85%</td>
-                <td>77.5</td>
-                <td>1</td>
-                <td>5+</td>
-            </tr>
-            <tr>
-                <td>65%</td>
-                <td>57.5</td>
-                <td>5</td>
-                <td>5</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <p week=0 day=5>
-        Bench
-    </p>
-
-    <table class="tableizer-table" week=0 day=5>
-        <thead>
-            <tr class="tableizer-firstrow">
-                <th>%</th>
-                <th>Weight</th>
-                <th>Sets</th>
-                <th>Reps</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>40%</td>
-                <td>67.5</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>50%</td>
-                <td>85</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>60%</td>
-                <td>100</td>
-                <td>1</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>65%</td>
-                <td>110</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>75%</td>
-                <td>125</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>85%</td>
-                <td>142.5</td>
-                <td>1</td>
-                <td>5+</td>
-            </tr>
-            <tr>
-                <td>65%</td>
-                <td>110</td>
-                <td>5</td>
-                <td>5</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <p week=0 day=6>Squat</p>
-
-    <table class="tableizer-table" week=0 day=6>
-        <thead>
-            <tr class="tableizer-firstrow">
-                <th>%</th>
-                <th>Weight</th>
-                <th>Sets</th>
-                <th>Reps</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>40%</td>
-                <td>80</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>50%</td>
-                <td>100</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>60%</td>
-                <td>117.5</td>
-                <td>1</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>65%</td>
-                <td>127.5</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>75%</td>
-                <td>147.5</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>85%</td>
-                <td>167.5</td>
-                <td>1</td>
-                <td>5+</td>
-            </tr>
-            <tr>
-                <td>65%</td>
-                <td>127.5</td>
-                <td>5</td>
-                <td>5</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <h2 week=1> Week 2 </h2>
-
-    <p week=1 day=1>Squat</p>
-
-    <table class="tableizer-table" week=1 day=1>
-        <thead>
-            <tr class="tableizer-firstrow">
-                <th>%</th>
-                <th>Weight</th>
-                <th>Sets</th>
-                <th>Reps</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>40%</td>
-                <td>80</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>50%</td>
-                <td>100</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>60%</td>
-                <td>117.5</td>
-                <td>1</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>70%</td>
-                <td>137.5</td>
-                <td>1</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>80%</td>
-                <td>157.5</td>
-                <td>1</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>90%</td>
-                <td>177.5</td>
-                <td>1</td>
-                <td>3+</td>
-            </tr>
-            <tr>
-                <td>70%</td>
-                <td>137.5</td>
-                <td>5</td>
-                <td>5</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <p week=1 day=2>Bench</p>
-
-    <table class="tableizer-table" week=1 day=2>
-        <thead>
-            <tr class="tableizer-firstrow">
-                <th>%</th>
-                <th>Weight</th>
-                <th>Sets</th>
-                <th>Reps</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>40%</td>
-                <td>67.5</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>50%</td>
-                <td>85</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>60%</td>
-                <td>100</td>
-                <td>1</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>70%</td>
-                <td>117.5</td>
-                <td>1</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>80%</td>
-                <td>135</td>
-                <td>1</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>90%</td>
-                <td>150</td>
-                <td>1</td>
-                <td>3+</td>
-            </tr>
-            <tr>
-                <td>70%</td>
-                <td>117.5</td>
-                <td>5</td>
-                <td>5</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <p week=1 day=3>Deadlift</p>
-    <table class="tableizer-table" week=1 day=3>
-        <thead>
-            <tr class="tableizer-firstrow">
-                <th>%</th>
-                <th>Weight</th>
-                <th>Sets</th>
-                <th>Reps</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>40%</td>
-                <td>105</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>50%</td>
-                <td>132.5</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>60%</td>
-                <td>160</td>
-                <td>1</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>70%</td>
-                <td>185</td>
-                <td>1</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>80%</td>
-                <td>212.5</td>
-                <td>1</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>90%</td>
-                <td>237.5</td>
-                <td>1</td>
-                <td>3+</td>
-            </tr>
-            <tr>
-                <td>70%</td>
-                <td>185</td>
-                <td>5</td>
-                <td>5</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <p week=1 day=4>Press</p>
-    <table class="tableizer-table" week=1 day=4>
-        <thead>
-            <tr class="tableizer-firstrow">
-                <th>%</th>
-                <th>Weight</th>
-                <th>Sets</th>
-                <th>Reps</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>40%</td>
-                <td>35</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>50%</td>
-                <td>45</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>60%</td>
-                <td>55</td>
-                <td>1</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>70%</td>
-                <td>62.5</td>
-                <td>1</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>80%</td>
-                <td>72.5</td>
-                <td>1</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>90%</td>
-                <td>80</td>
-                <td>1</td>
-                <td>3+</td>
-            </tr>
-            <tr>
-                <td>70%</td>
-                <td>62.5</td>
-                <td>5</td>
-                <td>5</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <p week=1 day=5>Bench</p>
-    <table class="tableizer-table" week=1 day=5>
-        <thead>
-            <tr class="tableizer-firstrow">
-                <th>%</th>
-                <th>Weight</th>
-                <th>Sets</th>
-                <th>Reps</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>40%</td>
-                <td>67.5</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>50%</td>
-                <td>85</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>60%</td>
-                <td>100</td>
-                <td>1</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>70%</td>
-                <td>117.5</td>
-                <td>1</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>80%</td>
-                <td>135</td>
-                <td>1</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>90%</td>
-                <td>150</td>
-                <td>1</td>
-                <td>3+</td>
-            </tr>
-            <tr>
-                <td>70%</td>
-                <td>117.5</td>
-                <td>5</td>
-                <td>5</td>
-            </tr>
-        </tbody>
-    </table>
-
-
-
-
-    <p week=1 day=6> Squat</p>
-    <table class="tableizer-table" week=1 day=6>
-        <thead>
-            <tr class="tableizer-firstrow">
-                <th>%</th>
-                <th>Weight</th>
-                <th>Sets</th>
-                <th>Reps</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>40%</td>
-                <td>80</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>50%</td>
-                <td>100</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>60%</td>
-                <td>117.5</td>
-                <td>1</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>70%</td>
-                <td>137.5</td>
-                <td>1</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>80%</td>
-                <td>157.5</td>
-                <td>1</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>90%</td>
-                <td>177.5</td>
-                <td>1</td>
-                <td>3+</td>
-            </tr>
-            <tr>
-                <td>70%</td>
-                <td>137.5</td>
-                <td>5</td>
-                <td>5</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <h2 week=2> Week 3 </h2>
-
-    <p week=2 day=1> Squat</p>
-    <table class="tableizer-table" week=2 day=1>
-        <thead>
-            <tr class="tableizer-firstrow">
-                <th>%</th>
-                <th>Weight</th>
-                <th>Sets</th>
-                <th>Reps</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>40%</td>
-                <td>80</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>50%</td>
-                <td>100</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>60%</td>
-                <td>117.5</td>
-                <td>1</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>75%</td>
-                <td>147.5</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>85%</td>
-                <td>167.5</td>
-                <td>1</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>95%</td>
-                <td>187.5</td>
-                <td>1</td>
-                <td>1+</td>
-            </tr>
-            <tr>
-                <td>75%</td>
-                <td>147.5</td>
-                <td>5</td>
-                <td>5</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <p week=2 day=2> Bench</p>
-    <table class="tableizer-table" week=2 day=2>
-        <thead>
-            <tr class="tableizer-firstrow">
-                <th>%</th>
-                <th>Weight</th>
-                <th>Sets</th>
-                <th>Reps</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>40%</td>
-                <td>67.5</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>50%</td>
-                <td>85</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>60%</td>
-                <td>100</td>
-                <td>1</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>75%</td>
-                <td>125</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>85%</td>
-                <td>142.5</td>
-                <td>1</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>95%</td>
-                <td>160</td>
-                <td>1</td>
-                <td>1+</td>
-            </tr>
-            <tr>
-                <td>75%</td>
-                <td>125</td>
-                <td>5</td>
-                <td>5</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <p week=2 day=3> Deadlift</p>
-    <table class="tableizer-table" week=2 day=3>
-        <thead>
-            <tr class="tableizer-firstrow">
-                <th>%</th>
-                <th>Weight</th>
-                <th>Sets</th>
-                <th>Reps</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>40%</td>
-                <td>105</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>50%</td>
-                <td>132.5</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>60%</td>
-                <td>160</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>75%</td>
-                <td>200</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>85%</td>
-                <td>225</td>
-                <td>1</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>95%</td>
-                <td>252.5</td>
-                <td>1</td>
-                <td>1+</td>
-            </tr>
-            <tr>
-                <td>75%</td>
-                <td>200</td>
-                <td>5</td>
-                <td>5</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <p week=2 day=4> Press</p>
-    <table class="tableizer-table" week=2 day=4>
-        <thead>
-            <tr class="tableizer-firstrow">
-                <th>%</th>
-                <th>Weight</th>
-                <th>Sets</th>
-                <th>Reps</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>40%</td>
-                <td>35</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>50%</td>
-                <td>45</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>60%</td>
-                <td>55</td>
-                <td>1</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>75%</td>
-                <td>67.5</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>85%</td>
-                <td>77.5</td>
-                <td>1</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>95%</td>
-                <td>85</td>
-                <td>1</td>
-                <td>1+</td>
-            </tr>
-            <tr>
-                <td>75%</td>
-                <td>67.5</td>
-                <td>5</td>
-                <td>5</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <p week=2 day=5> Bench</p>
-    <table class="tableizer-table" week=2 day=5>
-        <thead>
-            <tr class="tableizer-firstrow">
-                <th>%</th>
-                <th>Weight</th>
-                <th>Sets</th>
-                <th>Reps</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>40%</td>
-                <td>67.5</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>50%</td>
-                <td>85</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>60%</td>
-                <td>100</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>75%</td>
-                <td>125</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>85%</td>
-                <td>142.5</td>
-                <td>1</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>95%</td>
-                <td>160</td>
-                <td>1</td>
-                <td>1+</td>
-            </tr>
-            <tr>
-                <td>75%</td>
-                <td>125</td>
-                <td>5</td>
-                <td>5</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <p week=2 day=6> Squat</p>
-    <table class="tableizer-table" week=2 day=6>
-        <thead>
-            <tr class="tableizer-firstrow">
-                <th>%</th>
-                <th>Weight</th>
-                <th>Sets</th>
-                <th>Reps</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>40%</td>
-                <td>80</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>50%</td>
-                <td>100</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>60%</td>
-                <td>117.5</td>
-                <td>1</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>75%</td>
-                <td>147.5</td>
-                <td>1</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>85%</td>
-                <td>167.5</td>
-                <td>1</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>95%</td>
-                <td>187.5</td>
-                <td>1</td>
-                <td>1+</td>
-            </tr>
-            <tr>
-                <td>75%</td>
-                <td>147.5</td>
-                <td>5</td>
-                <td>5</td>
-            </tr>
-        </tbody>
-    </table>
-
-
-
     <script>
 
+        var one_rep_max = {
+            'Squat': 176,
+            'Bench': 148,
+            'Deadlift': 236,
+            'Press': 80
+        };
+
+        var workout_by_week = [
+            [
+                {
+                    '%': .4,
+                    'reps': 5
+                },
+                {
+                    '%': .5,
+                    'reps': 5
+                },
+                {
+                    '%': .6,
+                    'reps': 3
+                },
+                {
+                    '%': .65,
+                    'reps': 5
+                },
+                {
+                    '%': .75,
+                    'reps': 5
+                },
+                {
+                    '%': .85,
+                    'reps': 5
+                },
+                {
+                    '%': .65,
+                    'reps': 5
+                }
+            ],
+            [
+                {
+                    '%': .4,
+                    'reps': 5
+                },
+                {
+                    '%': .5,
+                    'reps': 5
+                },
+                {
+                    '%': .6,
+                    'reps': 3
+                },
+                {
+                    '%': .7,
+                    'reps': 3
+                },
+                {
+                    '%': .8,
+                    'reps': 3
+                },
+                {
+                    '%': .9,
+                    'reps': 3
+                },
+                {
+                    '%': .7,
+                    'reps': 5
+                }
+            ],
+            [
+                {
+                    '%': .4,
+
+                    'reps': 5
+                },
+                {
+                    '%': .5,
+
+                    'reps': 5
+                },
+                {
+                    '%': .6,
+
+                    'reps': 5
+                },
+                {
+                    '%': .75,
+
+                    'reps': 5
+                },
+                {
+                    '%': .85,
+
+                    'reps': 3
+                },
+                {
+                    '%': .95,
+
+                    'reps': 1
+                },
+                {
+                    '%': .75,
+                    'reps': 5
+                }
+            ],
+
+
+        ];
+
+        var exercise_by_day = [
+            null,
+            'Squat',
+            'Bench',
+            'Deadlift',
+            'Press',
+            'Bench',
+            'Squat'
+        ]
+
+        var increment = 5;
+
+        function amountTocoins(amount, coins) {
+            if (amount <= 0) {
+                return [];
+            }
+            else {
+                if (amount >= coins[0]) {
+                    left = (amount - coins[0]);
+                    return [coins[0]].concat(amountTocoins(left, coins));
+                }
+                else {
+                    coins.shift();
+                    return amountTocoins(amount, coins);
+                }
+            }
+        }
+
+        function create_workout(workout, exercise) {
+            if (exercise) {
+
+
+                const body = document.body;
+
+                var y = document.createElement("h3");
+                var t = document.createTextNode(exercise + ' - ' + one_rep_max[exercise] + ' 1RM');
+                body.appendChild(y).appendChild(t);
+
+
+                const tbl = document.createElement('table');
+                tbl.setAttribute('class', 'table');
+
+                const dropset = workout[workout.length - 1]
+
+                for (const element of workout) {
+                    if (element !== dropset) {
+                        const tr = tbl.insertRow();
+                        const td = tr.insertCell();
+
+                        var training_max = one_rep_max[exercise] * 0.9;
+                        var weight = Math.ceil(element['%'] * training_max / increment) * increment;
+
+                        td.appendChild(document.createTextNode(weight));
+
+
+                        const reps = tr.insertCell();
+                        reps.appendChild(document.createTextNode(element['reps']));
+
+                        const weight_breakdown = tr.insertCell();
+                        var split = weight - 45;
+                        var rounded_split = Math.ceil(split / increment) * increment / 2;
+                        var plates = amountTocoins(rounded_split, [45, 25, 10, 5, 2.5])
+                        weight_breakdown.appendChild(document.createTextNode(plates.join(', ')));
+                    }
+
+
+                }
+
+                const head = tbl.createTHead();
+                const thead = head.insertRow();
+
+                var header = ['lb', 'reps', 'plates']
+                for (const header_element of header) {
+
+                    th = thead.insertCell();
+                    th.appendChild(document.createTextNode(header_element));
+                    th.setAttribute('scope', 'col')
+                }
+
+
+                body.appendChild(tbl);
+
+                var a = document.createElement("h6");
+                var b = document.createTextNode('Dropset (x5)');
+                body.appendChild(a).appendChild(b);
 
 
 
+                const tbl2 = document.createElement('table');
+                tbl2.setAttribute('class', 'table');
 
+
+                for (let index = 0; index < 1; index++) {
+                    const element = dropset
+
+                    const tr = tbl2.insertRow();
+                    const td = tr.insertCell();
+
+                    var training_max = one_rep_max[exercise] * 0.9;
+                    var weight = Math.ceil(element['%'] * training_max / increment) * increment;
+
+                    td.appendChild(document.createTextNode(weight));
+
+
+                    const reps = tr.insertCell();
+                    reps.appendChild(document.createTextNode(element['reps']));
+
+                    const weight_breakdown = tr.insertCell();
+                    var split = weight - 45;
+                    var rounded_split = Math.ceil(split / increment) * increment / 2;
+                    var plates = amountTocoins(rounded_split, [45, 25, 10, 5, 2.5])
+                    weight_breakdown.appendChild(document.createTextNode(plates.join(', ')));
+
+
+                }
+                const head2 = tbl2.createTHead();
+                const thead2 = head2.insertRow();
+
+                var header = ['lb', 'reps', 'plates']
+                for (const header_element of header) {
+
+                    th = thead2.insertCell();
+                    th.appendChild(document.createTextNode(header_element));
+                    th.setAttribute('scope', 'col')
+                }
+
+
+
+                body.appendChild(tbl2);
+
+            }
+        }
 
         function getWeekNumber(d) {
             // Copy date so don't modify original
@@ -1083,28 +267,33 @@
 
         var date = new Date()
         var week = getWeekNumber(date);
-        var day = date.getDay();
 
-        var all = document.querySelectorAll('table,p,h2')
-        for (var i = 0, max = all.length; i < max; i++) {
-            if (!all[i].hasAttribute('week')) {
-                all[i].style.display = "none"
+        var week_in_cycle = week % 3;
+        var day_of_week = 1 // date.getDay();
+
+        console.log('Week in Cycle: ' + week_in_cycle)
+
+        var workout = workout_by_week[week_in_cycle]
+        var exercise = exercise_by_day[day_of_week]
+
+        create_workout(workout, exercise);
+
+
+        var clicks = 5;
+
+        function onClick() {
+            clicks -= 1;
+            var button = document.getElementById("clicks");
+            button.innerHTML = clicks + " Sets Remaining";
+            if (clicks <= 0) {
+                button.style.display = "none"
             }
-            else {
-                if (all[i].getAttribute('week') != week % 3) {
-                    all[i].style.display = "none"
-                }
-                if (all[i].hasAttribute('day')) {
-                    if (all[i].getAttribute('day') != day) {
-                        all[i].style.display = "none"
-                    }
-                }
+        };
 
-
-            }
-        }
     </script>
 
-</body>
+    <button class="btn btn-primary btn-lg" type="button" sets="true" onClick="onClick()" id="clicks">5 Sets
+        Remaining</button>
 
-</html>
+
+</body>
