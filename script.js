@@ -1,7 +1,7 @@
 
 var one_rep_max = {
     'Squat': 150,
-    'Bench': 150,
+    'Bench': 175,
     'Deadlift': 220,
     'Press': 95
 };
