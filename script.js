@@ -1,3 +1,4 @@
+var weight = 165;
 
 var one_rep_max = {
     'Squat': 150,
@@ -142,7 +143,7 @@ function create_workout(workout, exercise) {
         const body = document.body;
 
         var y = document.createElement("h3");
-        var t = document.createTextNode(exercise + ' - ' + one_rep_max[exercise] + ' 1RM');
+        var t = document.createTextNode(exercise + ' - ' + one_rep_max[exercise] + ' 1RM (' + Math.round(one_rep_max[exercise]/weight*100)) + '%)';
         body.appendChild(y).appendChild(t);
 
 
