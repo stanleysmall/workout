@@ -1,123 +1,3 @@
-var my_weight = 165;
-
-var one_rep_max = {
-    'Squat': 150,
-    'Bench': 175,
-    'Deadlift': 275,
-    'Press': 95
-};
-
-var workout_by_week = [
-    [
-        {
-            '%': .4,
-            'reps': 5
-        },
-        {
-            '%': .5,
-            'reps': 5
-        },
-        {
-            '%': .6,
-            'reps': 3
-        },
-        {
-            '%': .65,
-            'reps': 5
-        },
-        {
-            '%': .75,
-            'reps': 5
-        },
-        {
-            '%': .85,
-            'reps': 5
-        },
-        {
-            '%': .65,
-            'reps': 5
-        }
-    ],
-    [
-        {
-            '%': .4,
-            'reps': 5
-        },
-        {
-            '%': .5,
-            'reps': 5
-        },
-        {
-            '%': .6,
-            'reps': 3
-        },
-        {
-            '%': .7,
-            'reps': 3
-        },
-        {
-            '%': .8,
-            'reps': 3
-        },
-        {
-            '%': .9,
-            'reps': 3
-        },
-        {
-            '%': .7,
-            'reps': 5
-        }
-    ],
-    [
-        {
-            '%': .4,
-
-            'reps': 5
-        },
-        {
-            '%': .5,
-
-            'reps': 5
-        },
-        {
-            '%': .6,
-
-            'reps': 5
-        },
-        {
-            '%': .75,
-
-            'reps': 5
-        },
-        {
-            '%': .85,
-
-            'reps': 3
-        },
-        {
-            '%': .95,
-
-            'reps': 1
-        },
-        {
-            '%': .75,
-            'reps': 5
-        }
-    ],
-
-
-];
-
-var exercise_by_day = [
-    'Press',
-    'Bench',
-    'Squat',
-    'Deadlift',
-    'Bench',
-    'Squat',
-    'Deadlift'
-]
-
 var increment = 5;
 
 function amountTocoins(amount, coins) {
@@ -143,7 +23,9 @@ function create_workout(workout, exercise) {
         const body = document.body;
 
         var y = document.createElement("h3");
-        var t = document.createTextNode(exercise + ' - ' + one_rep_max[exercise] + ' 1RM (' + Math.round(one_rep_max[exercise]/my_weight*100) + '%)');
+        var percent_of_body_weight = Math.round(one_rep_max[exercise] / my_weight * 100);
+        var target_1RM = Math.round(goals[exercise] * my_weight)
+        var t = document.createTextNode(exercise + ' - ' + one_rep_max[exercise] + ' 1RM (' + percent_of_body_weight + '%) Goal ' + target_1RM);
         body.appendChild(y).appendChild(t);
 
 
@@ -151,6 +33,8 @@ function create_workout(workout, exercise) {
         tbl.setAttribute('class', 'table');
 
         const dropset = workout[workout.length - 1]
+
+        var reps_needed_to_pr;
 
         for (const element of workout) {
             if (element !== dropset) {
@@ -164,13 +48,21 @@ function create_workout(workout, exercise) {
 
 
                 const reps = tr.insertCell();
-                reps.appendChild(document.createTextNode(element['reps']));
+                var rep = element['reps'];
+                reps.appendChild(document.createTextNode(rep));
 
                 const weight_breakdown = tr.insertCell();
                 var split = weight - 45;
                 var rounded_split = Math.ceil(split / increment) * increment / 2;
                 var plates = amountTocoins(rounded_split, [45, 25, 10, 5, 2.5])
                 weight_breakdown.appendChild(document.createTextNode(plates.join(', ')));
+
+                reps_needed_to_pr = rep;
+                var theoretical_max = baechleOneRepMax(weight, reps_needed_to_pr);
+                while (theoretical_max < one_rep_max[exercise]) {
+                    reps_needed_to_pr += 1;
+                    var theoretical_max = baechleOneRepMax(weight, reps_needed_to_pr);
+                }
             }
 
 
@@ -192,7 +84,7 @@ function create_workout(workout, exercise) {
 
         var a = document.createElement("h6");
         a.style = "width:100px;height:24px;text-align: center;margin-top: 16px;    "
-        var b = document.createTextNode('Dropsets');
+        var b = document.createTextNode(String(reps_needed_to_pr) + ' reps to PR');
         var div = document.createElement("div");
         var c = document.createElement("button");
         c.className = "btn btn-primary btn-lg";
@@ -200,13 +92,13 @@ function create_workout(workout, exercise) {
         c.sets = "true"
         c.onclick = function onClick() {
             this.value -= 1;
-            this.innerHTML = this.value + " Remaining";
+            this.innerHTML = this.value + " Dropsets Remaining";
             if (this.value <= 0) {
                 this.style.display = "none"
             }
         };
         c.id = "clicks";
-        c.innerHTML = "5 Remaining";
+        c.innerHTML = "5 Dropsets Remaining";
         c.style = "touch-action: manipulation;"
         div.style = "display: flex; "
 
@@ -259,6 +151,11 @@ function create_workout(workout, exercise) {
         body.appendChild(tbl2);
 
     }
+}
+
+function baechleOneRepMax(weight, reps) {
+    var one_rep_max = weight + (((weight * reps) * 0.0333));
+    return one_rep_max;
 }
 
 function getWeekNumber(d) {
