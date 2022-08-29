@@ -35,6 +35,7 @@ function create_workout(workout, exercise) {
         const dropset = workout[workout.length - 1]
 
         var reps_needed_to_pr;
+        var theoretical_max;
 
         for (const element of workout) {
             if (element !== dropset) {
@@ -58,10 +59,10 @@ function create_workout(workout, exercise) {
                 weight_breakdown.appendChild(document.createTextNode(plates.join(', ')));
 
                 reps_needed_to_pr = rep;
-                var theoretical_max = baechleOneRepMax(weight, reps_needed_to_pr);
+                var theoretical_max = OneRepMax(weight, reps_needed_to_pr);
                 while (theoretical_max < one_rep_max[exercise]) {
                     reps_needed_to_pr += 1;
-                    var theoretical_max = baechleOneRepMax(weight, reps_needed_to_pr);
+                    theoretical_max = OneRepMax(weight, reps_needed_to_pr);
                 }
             }
 
@@ -84,7 +85,7 @@ function create_workout(workout, exercise) {
 
         var a = document.createElement("h6");
         a.style = "width:100px;height:24px;text-align: center;margin-top: 16px;    "
-        var b = document.createTextNode(String(reps_needed_to_pr) + ' reps to PR');
+        var b = document.createTextNode(String(reps_needed_to_pr) + ' PR (' + String(theoretical_max) + ')');
         var div = document.createElement("div");
         var c = document.createElement("button");
         c.className = "btn btn-primary btn-lg";
@@ -153,8 +154,14 @@ function create_workout(workout, exercise) {
     }
 }
 
-function baechleOneRepMax(weight, reps) {
-    var one_rep_max = weight + (((weight * reps) * 0.0333));
+function OneRepMax(weight, reps) {
+    var one_rep_max;
+    if (form.RepsPerformed.value < 10) {
+        one_rep_max = Math.round(weight / (1.0278 - 0.0278 * reps))
+    }
+    else {
+        one_rep_max = Math.round(weight / 0.75)
+    }
     return one_rep_max;
 }
 
