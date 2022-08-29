@@ -156,7 +156,7 @@ function create_workout(workout, exercise) {
 
 function OneRepMax(weight, reps) {
     var one_rep_max;
-    if (form.RepsPerformed.value < 10) {
+    if (reps < 10) {
         one_rep_max = Math.round(weight / (1.0278 - 0.0278 * reps))
     }
     else {
