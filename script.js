@@ -60,7 +60,7 @@ function create_workout(workout, exercise) {
 
                 reps_needed_to_pr = rep;
                 var theoretical_max = OneRepMax(weight, reps_needed_to_pr);
-                while (theoretical_max < one_rep_max[exercise]) {
+                while (theoretical_max <= one_rep_max[exercise]) {
                     reps_needed_to_pr += 1;
                     theoretical_max = OneRepMax(weight, reps_needed_to_pr);
                 }
@@ -155,14 +155,7 @@ function create_workout(workout, exercise) {
 }
 
 function OneRepMax(weight, reps) {
-    var one_rep_max;
-    if (reps < 10) {
-        one_rep_max = Math.round(weight / (1.0278 - 0.0278 * reps))
-    }
-    else {
-        one_rep_max = Math.round(weight / 0.75)
-    }
-    return one_rep_max;
+    return Math.round(weight / (1.0278 - 0.0278 * reps));
 }
 
 function getWeekNumber(d) {
