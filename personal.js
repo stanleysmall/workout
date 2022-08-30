@@ -1,4 +1,4 @@
-var my_weight = 165;
+var my_weight = 157.6;
 
 var one_rep_max = {
     'Squat': 175,
