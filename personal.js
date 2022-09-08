@@ -9,7 +9,7 @@ var one_rep_max = {
 
 var goals = {
     'Squat': 1.5,
-    'Bench': 1.2,
+    'Bench': 1.5,
     'Deadlift': 2,
     'Press': 0.8
 }
