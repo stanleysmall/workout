@@ -2,7 +2,7 @@ var my_weight = 157.6;
 
 var one_rep_max = {
     'Squat': 175,
-    'Bench': 180,
+    'Bench': 190,
     'Deadlift': 300,
     'Press': 95
 };
