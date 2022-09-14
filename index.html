@@ -10,9 +10,15 @@
 </head>
 
 <body>
+  <div class="fixed-header">
+    Workout App
+  </div>
   <script type="text/javascript" src="personal.js"></script>
   <script type="text/javascript" src="weeks.js"></script>
   <script type="text/javascript" src="script.js"></script>
+  <div class="fixed-footer">
+    Copyright &copy; 2022 Stanley Small
+  </div>
 </body>
 
 <style>
@@ -30,5 +36,23 @@
 
   h3 {
     color: white;
+  }
+
+  .fixed-header,
+  .fixed-footer {
+    width: 100%;
+    position: fixed;
+    background: #333;
+    padding: 10px 0;
+    color: #fff;
+    text-align: center;
+  }
+
+  .fixed-header {
+    top: 0;
+  }
+
+  .fixed-footer {
+    bottom: 0;
   }
 </style>
