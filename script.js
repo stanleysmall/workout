@@ -158,29 +158,18 @@ function OneRepMax(weight, reps) {
     return Math.round(weight / (1.0278 - 0.0278 * reps));
 }
 
-function getWeekNumber(d) {
-    // Copy date so don't modify original
-    d = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
-    // Set to nearest Thursday: current date + 4 - current day number
-    // Make Sunday's day number 7
-    d.setUTCDate(d.getUTCDate() + 4 - (d.getUTCDay() || 7));
-    // Get first day of year
-    var yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
-    // Calculate full weeks to nearest Thursday
-    var weekNo = Math.ceil((((d - yearStart) / 86400000) + 1) / 7);
-    // Return array of year and week number
-    return weekNo;
-}
+var now = new Date();
+var start = new Date(now.getFullYear(), 0, 0);
+var diff = (now - start) + ((start.getTimezoneOffset() - now.getTimezoneOffset()) * 60 * 1000);
+var oneDay = 1000 * 60 * 60 * 24;
+var day = Math.floor(diff / oneDay);
 
-var date = new Date()
-var week = getWeekNumber(date);
-
-var week_in_cycle = week % 3;
-var day_of_week = date.getDay();
+var week_in_cycle = Math.floor(day / exercise_by_day.length) % 3;
+var day_of_cycle = day % exercise_by_day.length
 
 console.log('Week in Cycle: ' + week_in_cycle)
 
 var workout = workout_by_week[week_in_cycle]
-var exercise = exercise_by_day[day_of_week]
+var exercise = exercise_by_day[day_of_cycle]
 
 create_workout(workout, exercise);
