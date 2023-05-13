@@ -36,27 +36,43 @@ function create_workout(workout, exercise) {
 
         var reps_needed_to_pr;
         var theoretical_max;
+        var prev_weight = 0;
 
         for (const element of workout) {
             if (element !== dropset) {
                 const tr = tbl.insertRow();
+
+                const percent = tr.insertCell();
+                percent.appendChild(document.createTextNode(element['%'] * 100));
+
                 const td = tr.insertCell();
 
                 var training_max = one_rep_max[exercise] * 0.9;
                 var weight = Math.ceil(element['%'] * training_max / increment) * increment;
 
+
                 td.appendChild(document.createTextNode(weight));
+
+
 
 
                 const reps = tr.insertCell();
                 var rep = element['reps'];
                 reps.appendChild(document.createTextNode(rep));
 
+                const change = tr.insertCell();
+                if (prev_weight > 0) {
+                    change.appendChild(document.createTextNode('+' + String(weight - prev_weight)));
+                }
+                prev_weight = weight;
+
                 const weight_breakdown = tr.insertCell();
                 var split = weight - 45;
                 var rounded_split = Math.ceil(split / increment) * increment / 2;
                 var plates = amountTocoins(rounded_split, [45, 25, 10, 5, 2.5])
                 weight_breakdown.appendChild(document.createTextNode(plates.join(', ')));
+
+
 
                 reps_needed_to_pr = rep;
                 var theoretical_max = OneRepMax(weight, reps_needed_to_pr);
@@ -72,7 +88,7 @@ function create_workout(workout, exercise) {
         const head = tbl.createTHead();
         const thead = head.insertRow();
 
-        var header = ['lb', 'reps', 'plates']
+        var header = ['%', 'lb', 'reps', '+', 'plates']
         for (const header_element of header) {
 
             th = thead.insertCell();
@@ -117,6 +133,10 @@ function create_workout(workout, exercise) {
             const element = dropset
 
             const tr = tbl2.insertRow();
+
+            const percent = tr.insertCell();
+            percent.appendChild(document.createTextNode(element['%'] * 100));
+
             const td = tr.insertCell();
 
             var training_max = one_rep_max[exercise] * 0.9;
@@ -127,6 +147,12 @@ function create_workout(workout, exercise) {
 
             const reps = tr.insertCell();
             reps.appendChild(document.createTextNode(element['reps']));
+
+            const change = tr.insertCell();
+            if (prev_weight > 0) {
+                change.appendChild(document.createTextNode(weight - prev_weight));
+            }
+            prev_weight = weight;
 
             const weight_breakdown = tr.insertCell();
             var split = weight - 45;
@@ -139,7 +165,7 @@ function create_workout(workout, exercise) {
         const head2 = tbl2.createTHead();
         const thead2 = head2.insertRow();
 
-        var header = ['lb', 'reps', 'plates']
+        var header = ['%', 'lb', 'reps', '-', 'plates']
         for (const header_element of header) {
 
             th = thead2.insertCell();
@@ -158,18 +184,7 @@ function OneRepMax(weight, reps) {
     return Math.round(weight / (1.0278 - 0.0278 * reps));
 }
 
-var now = new Date();
-var start = new Date(now.getFullYear(), 0, 0);
-var diff = (now - start) + ((start.getTimezoneOffset() - now.getTimezoneOffset()) * 60 * 1000);
-var oneDay = 1000 * 60 * 60 * 24;
-var day = Math.floor(diff / oneDay);
-
-var week_in_cycle = Math.floor(day / exercise_by_day.length) % 1;
-var day_of_cycle = day % exercise_by_day.length
-
-console.log('Week in Cycle: ' + week_in_cycle)
-
-var workout = workout_by_week[week_in_cycle]
-var exercise = exercise_by_day[day_of_cycle]
+var workout = workout_by_week[0]
+var exercise = exercise_by_day[Math.floor(Math.random() * 100) % exercise_by_day.length]
 
 create_workout(workout, exercise);
