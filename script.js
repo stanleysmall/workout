@@ -164,7 +164,7 @@ var diff = (now - start) + ((start.getTimezoneOffset() - now.getTimezoneOffset()
 var oneDay = 1000 * 60 * 60 * 24;
 var day = Math.floor(diff / oneDay);
 
-var week_in_cycle = Math.floor(day / exercise_by_day.length) % 3;
+var week_in_cycle = Math.floor(day / exercise_by_day.length) % 1;
 var day_of_cycle = day % exercise_by_day.length
 
 console.log('Week in Cycle: ' + week_in_cycle)
