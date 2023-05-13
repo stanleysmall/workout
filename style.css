@@ -1,0 +1,36 @@
+body {
+    padding-top: 34pt;
+    background-color: rgb(78, 110, 93);
+}
+
+h3,
+h2,
+h6,
+th,
+td {
+    color: white;
+}
+
+.fixed-header,
+.fixed-footer {
+    width: 100%;
+    position: fixed;
+    color: #fff;
+    text-align: center;
+    background: #333;
+    height: 34pt;
+}
+
+.fixed-header {
+    top: 0;
+}
+
+.fixed-footer {
+    bottom: 0;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+i {
+    transform: translateY(15%);
+}
